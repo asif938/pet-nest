@@ -106,7 +106,7 @@ const Home = () => {
                         <div className="lg:block">
                             <div className="grid grid-cols-2 gap-4">
                                 <img 
-                                    src="https://i.ibb.co.com/ZpNmB238/Untitled-design-3.jpg" 
+                                    src="https://i.ibb.co.com/QFVtcngZ/Untitled-300-x-400-px.jpg" 
                                     alt="Cute cat" 
                                     className="rounded-2xl shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-300"
                                 />
