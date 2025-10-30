@@ -52,12 +52,16 @@ export const router = createBrowserRouter([
       },
       // user routes
       {
-        path: "pets",
+        path: "mypets",
         element: <MyPets></MyPets>,
       },
       {
         path: "managerequests",
         element: <ManageRequests></ManageRequests>,
+      },
+      {
+        path: "pets",
+        element: <Pets></Pets>,
       },
     ],
   },

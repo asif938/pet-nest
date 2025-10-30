@@ -133,7 +133,7 @@ const ManageRequests = () => {
                         onClick={() => setActiveTab('received')}
                         className={`flex-1 py-4 px-6 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-3 ${
                             activeTab === 'received'
-                                ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg transform scale-105'
+                                ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg transform scale-'
                                 : 'text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700'
                         }`}
                     >
@@ -151,7 +151,7 @@ const ManageRequests = () => {
                         onClick={() => setActiveTab('sent')}
                         className={`flex-1 py-4 px-6 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-3 ${
                             activeTab === 'sent'
-                                ? 'bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg transform scale-105'
+                                ? 'bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg transform scale-'
                                 : 'text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700'
                         }`}
                     >

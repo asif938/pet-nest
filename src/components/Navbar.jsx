@@ -130,6 +130,12 @@ const Navbar = () => {
                         >
                             Home
                         </Link>
+                        {user && <Link
+                            to="/dashboard"
+                            className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium"
+                        >
+                            Dashboard
+                        </Link>}
                         <Link
                             to="/pets"
                             className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium"

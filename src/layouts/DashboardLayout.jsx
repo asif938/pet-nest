@@ -11,9 +11,9 @@ const DashboardLayout = () => {
 
     const navigation = [
         { name: 'Dashboard', href: '/dashboard', icon: '📊', current: location.pathname === '/dashboard' },
-        { name: 'My Pets', href: '/dashboard/pets', icon: '🐾', current: location.pathname === '/dashboard/pets' },
-        { name: 'Adoptions', href: '/dashboard/adoptions', icon: '🏠', current: location.pathname === '/dashboard/adoptions' },
-        { name: 'Mannage Requests', href: '/dashboard/managerequests', icon: '💬', current: location.pathname === '/dashboard/messages' },
+        { name: 'My Pets', href: '/dashboard/mypets', icon: '🐾', current: location.pathname === '/dashboard/mypets' },
+        { name: 'Adoptions', href: '/dashboard/pets', icon: '🏠', current: location.pathname === '/dashboard/pets' },
+        { name: 'Mannage Requests', href: '/dashboard/managerequests', icon: '💬', current: location.pathname === '/dashboard/managerequests' },
         { name: 'Profile', href: '/dashboard/profile', icon: '👤', current: location.pathname === '/dashboard/profile' },
         { name: 'Settings', href: '/dashboard/settings', icon: '⚙️', current: location.pathname === '/dashboard/settings' },
     ];
@@ -69,6 +69,7 @@ const DashboardLayout = () => {
                             <Link
                                 key={item.name}
                                 to={item.href}
+                                onClick={() => setSidebarOpen(false)}
                                 className={`group flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${
                                     item.current
                                         ? 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300'
@@ -97,6 +98,7 @@ const DashboardLayout = () => {
                         <div className="mt-4 px-3">
                             <Link
                                 to="/"
+                                onClick={() => setSidebarOpen(false)}
                                 className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
                             >
                                 <span className="mr-3">🏠</span>
