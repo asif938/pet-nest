@@ -10,6 +10,7 @@ import MyPets from "../pages/user/MyPets";
 import ManageRequests from "../pages/user/ManageRequests";
 import Pets from "../pages/user/Pets";
 import PageNotFound from "../pages/PageNotFound";
+import Profile from "../pages/user/Profile";
 // import { RouterProvider } from "react-router/dom";
 
 
@@ -62,6 +63,10 @@ export const router = createBrowserRouter([
       {
         path: "pets",
         element: <Pets></Pets>,
+      },
+      {
+        path: "profile",
+        element: <Profile></Profile>,
       },
     ],
   },

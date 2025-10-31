@@ -1,6 +1,8 @@
 import React from 'react';
+import useAuth from '../../hooks/useAuth';
 
 const UserDashboard = () => {
+    const { user } = useAuth();
     const stats = [
         { label: 'My Pets', value: '3', icon: '🐾', color: 'blue' },
         { label: 'Adoptions', value: '1', icon: '🏠', color: 'green' },
@@ -20,7 +22,7 @@ const UserDashboard = () => {
             {/* Welcome Section */}
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
                 <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                    Welcome back, John! 👋
+                    Welcome back, {user?.displayName}! 👋
                 </h1>
                 <p className="text-gray-600 dark:text-gray-300">
                     Here's what's happening with your pet adoption journey.
