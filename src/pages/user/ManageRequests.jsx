@@ -127,8 +127,48 @@ const ManageRequests = () => {
                     </p>
                 </div>
 
-                {/* Tab Navigation */}
-                <div className="flex w-[400px] sm:w-full space-x-1 bg-white dark:bg-gray-800 p-2 rounded-2xl shadow-lg mb-12 border border-gray-200 dark:border-gray-700">
+                {/* Tab navigation for phone  */}
+                <div className="flex space-x-1 bg-white dark:bg-gray-800 p-2 rounded-2xl shadow-lg mb-12 border border-gray-200 dark:border-gray-700 sm:hidden">
+                    <button
+                        onClick={() => setActiveTab('received')}
+                        className={`flex-1 py-2 px-2 sm:py-4 sm:px-6 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center text-xs sm:text-base gap-3 ${
+                            activeTab === 'received'
+                                ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg transform scale-'
+                                : 'text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700'
+                        }`}
+                    >
+                        {/* <span className="text-lg">📥</span> */}
+                        Received
+                        <span className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium ${
+                            activeTab === 'received' 
+                                ? 'bg-white text-blue-600' 
+                                : 'bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-300'
+                        }`}>
+                            {receivedRequests.length}
+                        </span>
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('sent')}
+                        className={`flex-1 py-2 px-2 sm:py-4 sm:px-6 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center text-xs sm:text-base gap-3 ${
+                            activeTab === 'sent'
+                                ? 'bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg transform scale-'
+                                : 'text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700'
+                        }`}
+                    >
+                        {/* <span className="text-lg">📤</span> */}
+                        Sent
+                        <span className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium ${
+                            activeTab === 'sent' 
+                                ? 'bg-white text-green-600' 
+                                : 'bg-green-100 text-green-600 dark:bg-green-900 dark:text-green-300'
+                        }`}>
+                            {sentRequests.length}
+                        </span>
+                    </button>
+                </div>
+
+                {/* Tab Navigation for mediam large device*/}
+                <div className="sm:flex w-[400px] sm:w-full space-x-1 bg-white dark:bg-gray-800 p-2 rounded-2xl shadow-lg mb-12 border border-gray-200 dark:border-gray-700 hidden">
                     <button
                         onClick={() => setActiveTab('received')}
                         className={`flex-1 py-2 px-2 sm:py-4 sm:px-6 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center text-xs sm:text-base gap-3 ${
