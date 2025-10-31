@@ -18,6 +18,7 @@ const ManageRequests = () => {
             return res.data;
         },
         enabled: !!user?.email,
+        refetchInterval: 3000,
     });
 
     const { data: sentRequests = [], isLoading: sentLoading } = useQuery({
@@ -27,6 +28,8 @@ const ManageRequests = () => {
             return res.data;
         },
         enabled: !!user?.email,
+        refetchInterval: 3000,
+        
     });
 
     const updateRequestMutation = useMutation({

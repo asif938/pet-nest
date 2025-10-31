@@ -22,6 +22,7 @@ const Pets = () => {
             const res = await axios.get('/pets');
             return res.data;
         },
+        refetchInterval: 3000,
     });
 
     // Filter pets based on search and filter
