@@ -69,7 +69,7 @@ const MyPets = () => {
         const imagUploadUrl = `https://api.imgbb.com/1/upload?key=7fa66a0d72bc45500d659fb383c5b97b`
         const res = await axios.post(imagUploadUrl, formData);
 
-        setImageFile(res.data.data.url);
+        setImageFile(res.data.data.display_url);
         // if (file) {
         //     setImageFile(file);
         //     const reader = new FileReader();
