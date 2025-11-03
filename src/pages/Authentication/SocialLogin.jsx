@@ -3,6 +3,7 @@ import { FcGoogle } from "react-icons/fc";
 import useAuth from '../../hooks/useAuth';
 import { useLocation, useNavigate } from 'react-router';
 import useAxios from '../../hooks/useAxios';
+import { askForNotificationPermission } from '../../firebase/notification';
 
 const SocialLogin = () => {
     const { signInWithGoogle } = useAuth();
@@ -26,6 +27,8 @@ const SocialLogin = () => {
         }
         const res = await axiosInstance.post('/users', userInfo);
         console.log(res.data);
+
+        askForNotificationPermission(user.email); // added in notification branch
 
         navigate(from);
     })

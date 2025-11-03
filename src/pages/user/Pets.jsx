@@ -4,6 +4,9 @@ import useAxios from '../../hooks/useAxios';
 import useAuth from '../../hooks/useAuth';
 import { useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
+import { get } from 'react-hook-form';
+import { getToken } from 'firebase/messaging';
+import { messaging } from '../../firebase/firebase.init';
 
 const Pets = () => {
     const axios = useAxios();
@@ -15,6 +18,7 @@ const Pets = () => {
     const [filterType, setFilterType] = useState('all');
     const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'detail'
     const [loading, setLoading] = useState(false);
+    
 
     const { data: allPets = [], isLoading } = useQuery({
         queryKey: ['allPets'],
@@ -39,6 +43,7 @@ const Pets = () => {
     };
 
     const handleAdoptionRequest = async () => {
+        const token = await getToken(messaging, {vapidKey: import.meta.env.VITE_FIREBASE_VAPID_KEY});
         // setShowAdoptionModal(true);
         if(!user){
             navigate('/login',{
@@ -70,6 +75,7 @@ const Pets = () => {
                 applicantId: user._id || user.uid,
                 applicantName: user.displayName || user.name || user.email || 'Unknown',
                 applicantEmail: user.email || 'Unknown',
+                applicantFcmToken: token || '',
                 
                 // Application Details
                 status: 'pending',
