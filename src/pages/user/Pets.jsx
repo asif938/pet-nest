@@ -43,8 +43,22 @@ const Pets = () => {
     };
 
     const handleAdoptionRequest = async () => {
-        const token = await getToken(messaging, {vapidKey: import.meta.env.VITE_FIREBASE_VAPID_KEY});
+        // const token = await getToken(messaging, {vapidKey: import.meta.env.VITE_FIREBASE_VAPID_KEY});
         // setShowAdoptionModal(true);
+        let token = "";
+
+        // ✅ Ask only if user manually enabled notifications earlier
+        if (Notification.permission === "granted") {
+            try {
+                token = await getToken(messaging, {
+                    vapidKey: import.meta.env.VITE_FIREBASE_VAPID_KEY
+                });
+            } catch (err) {
+                console.warn("FCM token blocked or failed", err);
+            }
+        }
+
+    
         if(!user){
             navigate('/login',{
                 state: {
