@@ -28,7 +28,7 @@ const SocialLogin = () => {
         const res = await axiosInstance.post('/users', userInfo);
         console.log(res.data);
 
-        askForNotificationPermission(user.email); // added in notification branch
+        //askForNotificationPermission(user.email); // added in notification branch
 
         navigate(from);
     })
